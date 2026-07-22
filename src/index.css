@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-med-primary: #0284C7; /* Sky 600 - Medical Blue */
+  --color-med-primary-dark: #0369A1; /* Sky 700 */
+  --color-med-teal: #0A8F6A; /* Maa Tara Brand Teal */
+  --color-med-teal-hover: #087a5a;
+  --color-med-dark: #0F172A; /* Slate 900 */
+  --color-med-light: #F8FAFC; /* Slate 50 */
+  --color-med-accent: #0A8F6A; /* Accent Color */
+
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-slide-up: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Base styles for dark mode */
+body {
+  @apply bg-slate-50 text-slate-800 antialiased transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+}
+
+/* Micro-shadows & card layouts */
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-slate-200/50 shadow-sm transition-all duration-300;
+}
+
+.dark .glass-card {
+  @apply bg-slate-900/80 backdrop-blur-md border-slate-800/50 shadow-md;
+}
+
+/* Custom typography accents */
+.heading-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.heading-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 48px;
+  height: 4px;
+  background-color: var(--color-med-teal);
+  border-radius: 2px;
+}
+
+.heading-accent-center {
+  position: relative;
+  display: inline-block;
+}
+
+.heading-accent-center::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 4px;
+  background-color: var(--color-med-teal);
+  border-radius: 2px;
+}
+
+/* Hide default file input look but keep functionality */
+.file-upload-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
