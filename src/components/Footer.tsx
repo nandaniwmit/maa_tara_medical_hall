@@ -185,14 +185,7 @@ export default function Footer({ setActivePage, onSelectCategory }: FooterProps)
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p className="text-center sm:text-left">
             © {new Date().getFullYear()} Maa Tara Medical Hall. All rights reserved. | Developed by{' '}
-            <a 
-              href="https://main.webmakerit.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-med-teal hover:underline font-semibold"
-            >
-              WMIT
-            </a>
+            <a href="#" className="wmit-popup-trigger hover:text-white underline transition-colors" target="_blank" rel="noopener noreferrer">Developed by WMIT</a>
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-[11px] font-semibold uppercase tracking-wider">
             <button className="hover:text-med-teal cursor-pointer">Privacy Policy</button>
